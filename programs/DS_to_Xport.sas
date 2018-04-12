@@ -2,7 +2,7 @@
  * ----------------------------------------------------------
  * Program Name   :  DS_to_Xport.sas
  * Purpose        :  Convert all to SAS migration file
- * Protocol #     :  
+ * Protocol #     :
  * Author         :  Matsuo Yamamoto
  * ----------------------------------------------------------
  */
@@ -40,14 +40,13 @@ quit;
   %let _dsnmid = %sysfunc(varnum(&_dslsid., &name.));
   %let type = %sysfunc(vartype(&_dslsid., &_dsnmid));
 
-  * データセット;
   %do _i = 1 %to &dscnt.;
     %let _ret = %sysfunc(fetchobs(&_dslsid, &_i.));
     %let dsnm = %lowcase(%sysfunc(getvarc(&_dslsid., &_dsnmid.)));
 
     libname libxpt xport "&path.\&dsnm..xpt";
 
-    proc copy in = &lib. out = libxpt; 
+    proc copy in = &lib. out = libxpt;
       select &dsnm.;
     run;
 
