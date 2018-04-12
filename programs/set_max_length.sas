@@ -1,6 +1,6 @@
 /*
  * ----------------------------------------------------------
- * Program Name   :  
+ * Program Name   :  Set_Max_Length.sas
  * Purpose        :  Resetting the length of the character with the actual maximum length
  * Protocol #     :  
  * Author         :  Matsuo Yamamoto
@@ -29,7 +29,7 @@ C S003 3 30 Y 2001-01-03
 ;
 run;
 
-%macro set_max_length(in=, out=);
+%macro Set_Max_Length(in=, out=);
   data _mt01;
     set &in.;
   run;
@@ -147,7 +147,7 @@ run;
   run;
 %mend;
 
-%set_max_length(in=_ds01, out=_out01);
+%Set_Max_Length(in=_ds01, out=_out01);
 
 proc contents data = _out01 varnum;
 run;

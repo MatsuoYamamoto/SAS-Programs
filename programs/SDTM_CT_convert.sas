@@ -1,6 +1,6 @@
 /*
  * ----------------------------------------------------------
- * Program Name   :  
+ * Program Name   :  SDTM_CT_Convert.sas
  * Purpose        :  Conversion of SDTM Terminology File
  * Protocol #     :  
  * Author         :  Matsuo Yamamoto
